@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameMenu</title>
+    <style>
+      @import url(MiniGame.css);
+      @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&display=swap");
+    </style>
+  </head>
+  <body>
+    <!-- 좌측상단/css:back - 6개 수정 요함 /html:2 css:4 -->
+    <!-- <div class="back">
+      <div class="Button BackButton" onclick="goToBack()"><</div>
+    </div> -->
+    <div class="container containerGM">
+      <!-- 가운데 - 6개 수정 요함 /html:2 css:4 -->
+      <div class="back">
+        <div class="Button BackButton BackButtonGM" onclick="goToBack()"><</div>
+      </div>
+      <p class="MenuText">선택해주세요</p>
+      <div class="List GuessNumberButton" onclick="goToGuessNumber()">
+        숫자 맞히기
+      </div>
+      <div class="List RPSButton" onclick="goToRPS()">가바보</div>
+      <div class="List GuessCoinButton" onclick="goToGuessCoin()">
+        동전 개수 맞히기
+      </div>
+      <!-- <div class="" onclick="">숫자 포커</div> -->
+    </div>
+    <!-- <script src="MiniGame.js"></script> -->
+    <script>
+      function goToGuessNumber() {
+        window.location.href = "/GuessNumber.html";
+      }
+      function goToRPS() {
+        window.location.href = "/RPS.html";
+      }
+      function goToGuessCoin() {
+        window.location.href = "/GuessCoin.html";
+      }
+      function goToBack() {
+        window.location.href = "/StartGame.html";
+      }
+    </script>
+  </body>
+</html>

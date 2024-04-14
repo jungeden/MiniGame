@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mine</title>
+    <style>
+      @import url(MiniGame.css);
+      @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&display=swap");
+
+      .TextM {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(209, 209, 209);
+        width: 100%;
+        height: 100%;
+      }
+      .t {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="m">
+      <div class="Button MineButton" onclick="goToBack()">ㅇ</div>
+    </div>
+    <div class="TextM">
+      <p class="t">
+        2024.04.04.목 16:22 - 2024.04.04.목 17:40 / 1시간 18분(78분) 현사인
+        중간에
+      </p>
+      <p class="t">
+        2024.04.05.금 08:50 - 2024.04.05.금 09:30 / 0시간 40분(40분) 가기 전
+      </p>
+      <p class="t">
+        2024.04.05.금 17:45 - 2024.04.04.금 19:20 / 1시간 35분(95분) 알바 갔다
+        와서
+      </p>
+      <p class="t">
+        2024.04.05.금 22:50 - 2024.04.06.토 02:20 / 4시간 30분(270분)
+      </p>
+      <p class="t">2024.04.06.토 08:40 - 2024.04.06.토 18:40 / 10시간(600분)</p>
+      <p class="t">2024.04.06.토 21:30 - 2024.04.07.일 05:30 / 8시간(480분)</p>
+      <p class="t"></p>
+      <p class="t"></p>
+      <p class="t"></p>
+      <p class="t"></p>
+      <p class="t"></p>
+    </div>
+    <script>
+      function goToBack() {
+        window.location.href = "/StartGame.html";
+      }
+    </script>
+  </body>
+</html>

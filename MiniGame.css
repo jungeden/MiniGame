@@ -1,0 +1,258 @@
+/* ----------------------------------- all ---------------------------------- */
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+}
+.container {
+  background-color: rgb(209, 209, 209);
+  /* (24+10)/1158*100=2.93 100-2.9=97.1 */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  text-align: center;
+  justify-content: center;
+  align-content: space-around;
+}
+/* ----------------------------------- -- ----------------------------------- */
+
+/* -------------------------------- StartGame ------------------------------- */
+.containerSG {
+  height: 96%;
+  background-color: rgb(209, 209, 209);
+}
+.m {
+  background-color: rgb(209, 209, 209);
+  padding: 10px 0px 0px 1124px;
+}
+.MineButton {
+  border: 2px solid rgb(50, 50, 50);
+  width: 18px;
+  height: 17px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+}
+.StartButton {
+  background-color: rgb(209, 209, 209);
+  border: 2px solid rgb(50, 50, 50);
+  /* width: 200px;
+  height: 100px; */
+  text-align: center;
+  padding: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: rgb(45, 45, 45);
+}
+.Button:hover {
+  cursor: pointer;
+  background-color: rgb(50, 50, 50);
+  transition: background-color 0.27s ease;
+  color: rgb(190, 190, 190);
+}
+
+.Titletext {
+  padding: 30px;
+  font-size: 30px;
+  color: rgb(50, 50, 50);
+}
+* {
+  font-family: "Gugi", sans-serif;
+}
+/* ----------------------------------- -- ----------------------------------- */
+
+/* -------------------------------- GameMenu -------------------------------- */
+.containerGM {
+  height: 100%;
+  background-color: rgb(209, 209, 209);
+}
+
+.MenuText {
+  padding-right: 127px;
+  padding-bottom: 15px;
+}
+
+.List {
+  background-color: rgb(209, 209, 209);
+  border: 2px solid rgb(50, 50, 50);
+  padding: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 10px;
+}
+
+.List:hover {
+  cursor: pointer;
+  background-color: rgb(50, 50, 50);
+  color: rgb(190, 190, 190);
+  transition: background-color 0.27s ease;
+}
+.BackButtonGM {
+  padding: 0px 0px 0px 3px;
+}
+/* ----------------------------------- -- ----------------------------------- */
+.GameTitle {
+  justify-content: center;
+}
+.HowToPlay {
+  justify-content: center;
+}
+.containerGN {
+  background-color: rgb(209, 209, 209);
+  /* 24/746*100=3.2 90-3.2=86.8 */
+  /* 10/1143*100=0.87 86.8-0.87=85.9 85.85% == 707.398px*/
+
+  /* 좌측상단 */
+  /* height: 85.85%; */
+
+  /* 가운데 */
+  height: 90%;
+  /* 15/1153*100=1.3 100-1.3=98.7*/
+  /* 10/708*100=1.4 98.7-1.4=97.3 */
+  width: 98.7%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  /* text-align: center; */
+  justify-content: center;
+  align-content: center;
+  padding-left: 15px;
+}
+/* .HowToPlay { */
+/* 공통 */
+/* background-color: rgb(209, 209, 209);
+  text-align: left; */
+
+/* 한번에 묶기 */
+/* border: 2px solid rgb(50, 50, 50);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px; */
+/* } */
+.back {
+  background-color: rgb(209, 209, 209);
+  /* 좌측상단 */
+  /* padding: 10px 0px 0px 10px; */
+  /* 가운데 */
+  padding-bottom: 4px;
+}
+.BackButton {
+  color: rgb(50, 50, 50);
+  border: 2px solid rgb(50, 50, 50);
+  width: 17px;
+  padding: 0px 0px 0px 2px;
+}
+.BackButtonGN {
+  /* 좌측상단/css:GuessNumberT 246-44=202*/
+  /* 가운데 */
+  margin-top: 230px;
+}
+
+.text {
+  color: rgb(50, 50, 50);
+
+  /* 한번에 묶기 */
+  /* margin-top: 0px;
+  margin-bottom: 10px; */
+
+  /* 따로 묶기 */
+  border: 2px solid rgb(50, 50, 50);
+  padding: 5px;
+  margin-bottom: 7px;
+  margin-top: 0px;
+  transition: background-color 0.3s ease;
+}
+.textGN {
+  width: 280.305px;
+  height: 20px;
+}
+
+.GameTitle {
+  padding-right: 184px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: rgb(45, 45, 45);
+}
+.GuessNumberT {
+  /* 좌측상단 */
+  /* margin-top: 246px; */
+  /* 가운데 */
+  margin-left: 2px;
+}
+
+.InputAnswer {
+  background-color: rgb(209, 209, 209);
+  border: none;
+  font-size: 16px;
+  color: rgb(45, 45, 45);
+  /* padding: 5px; */
+  /* margin-bottom: 7px;
+  margin-top: 10px; */
+}
+.InputAnswer:focus {
+  outline: none;
+  font-size: 16px;
+  color: rgb(45, 45, 45);
+  width: auto;
+}
+.Question {
+  /* padding-left: 2px; */
+  text-align: left;
+  margin: 0px;
+  padding: 150px 0px 5px 2px;
+  color: rgb(45, 45, 45);
+  width: 317px;
+  height: 22px;
+  /* padding-right: 229px; */
+}
+.Message {
+  text-align: left;
+  margin: 0px;
+  padding: 5px 0px 5px 2px;
+  color: rgb(81, 81, 81);
+  text-align: justify;
+}
+.WrongMessage {
+  /* margin: 20px 0px 292.3px 0px; */
+  text-align: justify;
+}
+.GuessNumberButtons {
+  background-color: rgb(209, 209, 209);
+  padding-left: 15px;
+  height: 10%;
+  width: 98.7%;
+  display: flex;
+  flex-wrap: wrap;
+
+  text-align: center;
+  justify-content: center;
+
+  flex-direction: row;
+  align-items: start;
+}
+
+.set {
+  justify-content: center;
+  background-color: rgb(209, 209, 209);
+  border: 2px solid rgb(50, 50, 50);
+  text-align: center;
+  width: 70px;
+  padding: 6px 7px 4.5px 7px;
+  color: rgb(45, 45, 45);
+  margin: 4px 0px 0px 0px;
+}
+.GameAgainButton {
+  margin-right: 7px;
+}
+.GameMenuButton {
+  margin-right: 7px;
+}
+.StartGameButton {
+  margin-right: 7px;
+}

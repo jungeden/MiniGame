@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StartGame</title>
+    <style>
+      @import url(MiniGame.css);
+      @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&display=swap");
+    </style>
+  </head>
+  <body>
+    <div class="m">
+      <div class="Button MineButton" onclick="goToMine()">ㅇ</div>
+    </div>
+    <div class="container containerSG">
+      <p class="Titletext">미니 게임</p>
+      <div class="Button StartButton" onclick="goToGameMenu()">시작하기</div>
+    </div>
+    <!-- <script src="MiniGame.js"></script> -->
+    <script>
+      // function MiniGame() {
+      //   document.getElementsByClassName("item").click();
+      // }
+      function goToGameMenu() {
+        window.location.href = "/GameMenu.html";
+      }
+      function goToMine() {
+        window.location.href = "/Mine.html";
+      }
+    </script>
+  </body>
+</html>
