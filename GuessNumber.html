@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GuessNumber</title>
+    <style>
+      @import url(MiniGame.css);
+      @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&display=swap");
+    </style>
+  </head>
+  <body>
+    <!-- 좌측상단/css:back -->
+    <!-- <div class="back">
+      <div class="Button BackButton" onclick="goToBack()"><</div>
+    </div> -->
+    <div class="containerGN">
+      <div class="back">
+        <!-- 가운데 -->
+        <div class="Button BackButton BackButtonGN" onclick="goToBack()"><</div>
+      </div>
+      <p class="GameTitle GuessNumberT">숫자 맞히기</p>
+      <div class="HowToPlay GuessNumberE">
+        <!-- <p>-_=_+.-=.*-_*+.*_=_*-*+-.=_+_-+_-</p> -->
+        <p class="text textGN">1. 숫자를 맞히세요.</p>
+        <p class="text textGN">2. 1~100까지 숫자 중 하나를 입력하세요.</p>
+        <p class="text textGN">3. 총 5번의 기회가 있습니다.</p>
+        <p class="text textGN">4. 행운을 빕니다!</p>
+        <!-- <p id="cc">정답 :</p> -->
+        <!-- <p>-+_=.*-+-=_-*+-.=_+_-*+.*_=_*-=_-</p> -->
+      </div>
+      <div id="answer GNAnswer">
+        <p class="Question">
+          >> 정답은 :
+          <input type="text" class="InputAnswer" id="GuessNumberAnswer" />
+        </p>
+      </div>
+      <!-- 틀렸을 때/출력 : 땡! 그것보다 -->
+      <!-- <div class="Message WrongMessage">
+        <p class="WrongMessage"></p>
+      </div> -->
+      <p class="Message" id="WrongMessage">&nbsp;</p>
+      <!-- 5번 후 결과/ -->
+      <!-- <div class="Message ScoreMessage">
+        <p class="ScoreMessage"></p>
+      </div> -->
+      <p class="Message" id="ScoreMessage">&nbsp;</p>
+
+      <!-- <div class="" onclick=""></div> -->
+    </div>
+    <div class="GuessNumberButtons" id="GuessNumberButtons">
+      <!-- <div class="set GameAgainButton">게임 다시 하러가기</div>
+      <div class="set GameMenuButton">다른 게임 하러가기</div>
+      <div class="set StartGameButton">처음으로 돌아가기</div> -->
+    </div>
+    <!-- <script src="MiniGame.js"></script> -->
+    <script>
+      var random_number = Math.floor(Math.random() * 101);
+      var computer = random_number;
+      //   정답 확인
+      //   var cc = document.getElementById("cc");
+      //   cc.textContent = computer;
+
+      function eff() {
+        var colorful = document.querySelectorAll(".textGN");
+        let delay = 0; // 초깃값 설정
+
+        colorful.forEach((text, index) => {
+          setTimeout(() => {
+            var newcolor = "rgb(45, 45, 45)";
+            var newtextcolor = "rgb(209, 209, 209)";
+            text.style.background = newcolor;
+            text.style.color = newtextcolor;
+          }, delay); // 순차적인 딜레이 적용
+
+          setTimeout(() => {
+            var originalColor = "rgb(209, 209, 209)";
+            var originalTextColor = "rgb(45, 45, 45)";
+            text.style.background = originalColor;
+            text.style.color = originalTextColor;
+          }, delay + 1000);
+
+          delay += 1200; // (1000,200) (1200 900) (1000 1200)
+        });
+      }
+      setTimeout(eff, 500);
+      document
+        .getElementById("GuessNumberAnswer")
+        .addEventListener("keyup", function (event) {
+          // Enter 키의 keyCode가 13
+          if (event.keyCode === 13) {
+            // 결과 확인
+            console.log(computer);
+            GuessNum();
+          }
+        });
+      var n = 0;
+
+      function ClearGuessNumberAnswer() {
+        var InputValue = document.getElementById("GuessNumberAnswer");
+        InputValue.value = "";
+      }
+      function makeButton() {
+        //게임 다시 하러 가기
+        var Dir1 = document.getElementById("GuessNumberButtons");
+        var GameAgainButton = document.createElement("dir");
+        GameAgainButton.textContent = "게임 다시 하러가기";
+        Dir1.appendChild(GameAgainButton);
+        GameAgainButton.classList.add("set");
+        GameAgainButton.classList.add("Button");
+        GameAgainButton.classList.add("GameAgainButton");
+        GameAgainButton.addEventListener("click", function () {
+          window.location.href = "/GuessNumber.html";
+        });
+        //다른 게임 하러가기
+        var Dir2 = document.getElementById("GuessNumberButtons");
+        var GameMenuButton = document.createElement("dir");
+        GameMenuButton.textContent = "다른 게임 하러가기";
+        Dir2.appendChild(GameMenuButton);
+        GameMenuButton.classList.add("set");
+        GameMenuButton.classList.add("Button");
+        GameMenuButton.classList.add("GameMenuButton");
+        GameMenuButton.addEventListener("click", function () {
+          window.location.href = "/GameMenu.html";
+        });
+        //처음으로 돌아가기
+        var Dir3 = document.getElementById("GuessNumberButtons");
+        var StartGameButton = document.createElement("dir");
+        StartGameButton.textContent = "처음으로 돌아가기";
+        Dir3.appendChild(StartGameButton);
+        StartGameButton.classList.add("set");
+        StartGameButton.classList.add("Button");
+        StartGameButton.classList.add("StartGameButton");
+        StartGameButton.addEventListener("click", function () {
+          window.location.href = "/StartGame.html";
+        });
+      }
+      function goToBack() {
+        window.location.href = "/GameMenu.html";
+      }
+
+      function GuessNum() {
+        var GuessNumberAnswer = parseInt(
+          document.getElementById("GuessNumberAnswer").value
+        );
+
+        if (
+          isNaN(GuessNumberAnswer) ||
+          GuessNumberAnswer < 1 ||
+          GuessNumberAnswer > 100
+        ) {
+          alert("1~100까지의 숫자를 선택해주세요.");
+          return;
+        }
+
+        var score = "";
+        var trytime = "";
+
+        if (GuessNumberAnswer === computer) {
+          switch (n) {
+            case 0:
+              score = ">> 운이 좋네요";
+              trytime = ">> 시도 횟수 : 1번";
+              break;
+            case 1:
+              score = ">> 우와 대단해요! ";
+              trytime = ">> 시도 횟수 : 2번";
+              break;
+            case 2:
+              score = ">> 잘 하시네요 ";
+              trytime = ">> 시도 횟수 : 3번";
+              break;
+            case 3:
+              score = ">> 좀 하시네요 ";
+              trytime = ">> 시도 횟수 : 4번";
+              break;
+            case 4:
+              score = ">> 우와 아슬아슬했따.. ";
+              trytime = ">> 시도 횟수 : 5번";
+              break;
+            case 5:
+              score =
+                ">> 땡! 아쉽지만 다음 기회에.. 정답은 " + computer + "입니다";
+              break;
+            default:
+              break;
+          }
+          var WrongText = document.getElementById("WrongMessage");
+          WrongText.value = "";
+          WrongText.textContent = score;
+
+          //정답 입력 못하게 삭제
+          var ScoreText = document.getElementById("ScoreMessage");
+          ScoreText.textContent = trytime;
+
+          var rightAnswer = ">> 정답은 : " + computer;
+
+          var ClearP = document.getElementById("answer GNAnswer");
+
+          ClearP.innerHTML = "";
+
+          var rightAnswerElement = document.createElement("p");
+          rightAnswerElement.textContent = rightAnswer;
+          ClearP.appendChild(rightAnswerElement);
+          rightAnswerElement.classList.add("Question");
+
+          makeButton();
+
+          //   var GameAgain =
+        } else if (GuessNumberAnswer > computer) {
+          var WrongText = document.getElementById("WrongMessage");
+          WrongText.value = "";
+
+          WrongText.textContent = ">> 땡! 그것보다 작지롱";
+
+          ClearGuessNumberAnswer();
+          n++;
+        } else if (GuessNumberAnswer < computer) {
+          var WrongText = document.getElementById("WrongMessage");
+          WrongText.value = "";
+
+          WrongText.textContent = ">> 땡! 그것보다 크지롱";
+
+          ClearGuessNumberAnswer();
+          n++;
+        }
+
+        if (n > 4) {
+          score = ">> 아쉽지만 다음 기회에.. 정답은 " + computer + "입니다";
+
+          var ScoreText = document.getElementById("ScoreMessage");
+          ScoreText.textContent = score;
+
+          var rightAnswer = ">> 정답은 : " + computer;
+
+          var ClearP = document.getElementById("answer GNAnswer");
+
+          ClearP.innerHTML = "";
+
+          var rightAnswerElement = document.createElement("p");
+          rightAnswerElement.textContent = rightAnswer;
+          ClearP.appendChild(rightAnswerElement);
+          rightAnswerElement.classList.add("Question");
+
+          makeButton();
+        }
+      }
+    </script>
+  </body>
+</html>
