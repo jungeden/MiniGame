@@ -10,11 +10,54 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <p></p>
-      <div class="" onclick=""></div>
-    </div>
+    <div class="container containerRPS">
+      <div class="back">
+        <!-- 가운데 -->
+        <div class="Button BackButton BackButtonRPS" onclick="goToBack()"><</div>
+      </div>
+      <p class="GameTitle RPST">가바보</p>
+      <div class="HowToPlay">
+        <!-- <p>-_=_+.-=.*-_*+.*_=_*-*+-.=_+_-+_-</p> -->
+        <p class="text textGN">1. 무엇을 낼지 생각하세요.</p>
+        <p class="text textGN">2. 가위 바위 보 중 하나를 선택하세요.</p>
+        <p class="text textGN">3. 3 선승제 입니다.</p>
+        <!-- <p class="text textGN">4.</p> -->
+        <!-- <p id="cc">정답 :</p> -->
+        <!-- <p>-+_=.*-+-=_-*+-.=_+_-*+.*_=_*-=_-</p> -->
+
+        <div>
+          <p class="List ButtonRPS">가위 바위 보!</p>
+        </div>
+      </div>
 
     <!-- <script src="MiniGame.js"></script> -->
+    <script>
+      function eff() {
+      var colorful = document.querySelectorAll(".textGN");
+        let delay = 0; // 초깃값 설정
+
+        colorful.forEach((text, index) => {
+          setTimeout(() => {
+            var newcolor = "rgb(45, 45, 45)";
+            var newtextcolor = "rgb(209, 209, 209)";
+            text.style.background = newcolor;
+            text.style.color = newtextcolor;
+          }, delay); // 순차적인 딜레이 적용
+
+          setTimeout(() => {
+            var originalColor = "rgb(209, 209, 209)";
+            var originalTextColor = "rgb(45, 45, 45)";
+            text.style.background = originalColor;
+            text.style.color = originalTextColor;
+          }, delay + 1000);
+
+          delay += 1200; // (1000,200) (1200 900) (1000 1200)
+        });
+      }
+      setTimeout(eff, 500);
+      function goToBack() {
+        window.location.href = "/GameMenu.html";
+      }
+    </script>
   </body>
 </html>

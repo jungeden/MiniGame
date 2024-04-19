@@ -16,7 +16,6 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
 
-  text-align: center;
   justify-content: center;
   align-content: space-around;
 }
@@ -56,8 +55,8 @@ body {
   color: rgb(190, 190, 190);
 }
 
-.Titletext {
-  padding: 30px;
+.MiniGameTitle {
+  padding: 30px 31px 30px 29px;
   font-size: 30px;
   color: rgb(50, 50, 50);
 }
@@ -68,8 +67,7 @@ body {
 
 /* -------------------------------- GameMenu -------------------------------- */
 .containerGM {
-  height: 100%;
-  background-color: rgb(209, 209, 209);
+  text-align: center;
 }
 
 .MenuText {
@@ -96,14 +94,19 @@ body {
   padding: 0px 0px 0px 3px;
 }
 /* ----------------------------------- -- ----------------------------------- */
+
+/* ------------------------------- GuessNumber ------------------------------ */
 .GameTitle {
   justify-content: center;
+  padding-right: 184px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: rgb(45, 45, 45);
 }
 .HowToPlay {
   justify-content: center;
 }
 .containerGN {
-  background-color: rgb(209, 209, 209);
   /* 24/746*100=3.2 90-3.2=86.8 */
   /* 10/1143*100=0.87 86.8-0.87=85.9 85.85% == 707.398px*/
 
@@ -115,13 +118,10 @@ body {
   /* 15/1153*100=1.3 100-1.3=98.7*/
   /* 10/708*100=1.4 98.7-1.4=97.3 */
   width: 98.7%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
 
   /* text-align: center; */
-  justify-content: center;
-  align-content: center;
+
+  /* align-content: center; ???*/
   padding-left: 15px;
 }
 /* .HowToPlay { */
@@ -173,12 +173,6 @@ body {
   height: 20px;
 }
 
-.GameTitle {
-  padding-right: 184px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  color: rgb(45, 45, 45);
-}
 .GuessNumberT {
   /* 좌측상단 */
   /* margin-top: 246px; */
@@ -255,4 +249,20 @@ body {
 }
 .StartGameButton {
   margin-right: 7px;
+}
+/* ----------------------------------- -- ----------------------------------- */
+
+/* ----------------------------------- RPS ---------------------------------- */
+.containerRPS {
+  height: 100%;
+}
+.ButtonRPS {
+  margin-top: 100px;
+}
+.RPST {
+  margin-right: 50px;
+}
+.BackButtonRPS {
+  /* 가운데 */
+  margin-top: 100px;
 }
