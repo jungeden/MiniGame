@@ -14,13 +14,13 @@
     <!-- <div class="back">
       <div class="Button BackButton" onclick="goToBack()"><</div>
     </div> -->
-    <div class="container ncontainerGN">
+    <div class="container containerGN">
       <div class="back">
         <!-- 가운데 -->
         <div class="Button BackButton BackButtonGN" onclick="goToBack()"><</div>
       </div>
-      <p class="GameTitle GuessNumberT">숫자 맞히기</p>
-      <div class="HowToPlay GuessNumberE">
+      <p class="GameTitle GuessNumberTitle">숫자 맞히기</p>
+      <div class="HowToPlay">
         <!-- <p>-_=_+.-=.*-_*+.*_=_*-*+-.=_+_-+_-</p> -->
         <p class="text textGN">1. 숫자를 맞히세요.</p>
         <p class="text textGN">2. 1~100까지 숫자 중 하나를 입력하세요.</p>
@@ -226,7 +226,7 @@
         }
 
         if (n > 4) {
-          score = ">> 아쉽지만 다음 기회에.. 정답은 " + computer + "입니다";
+          score = ">> 아쉽네요! 정답은 " + computer + "입니다";
 
           var ScoreText = document.getElementById("ScoreMessage");
           ScoreText.textContent = score;

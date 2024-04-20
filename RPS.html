@@ -13,27 +13,58 @@
     <div class="container containerRPS">
       <div class="back">
         <!-- 가운데 -->
-        <div class="Button BackButton BackButtonRPS" onclick="goToBack()"><</div>
-      </div>
-      <p class="GameTitle RPST">가바보</p>
-      <div class="HowToPlay">
-        <!-- <p>-_=_+.-=.*-_*+.*_=_*-*+-.=_+_-+_-</p> -->
-        <p class="text textGN">1. 무엇을 낼지 생각하세요.</p>
-        <p class="text textGN">2. 가위 바위 보 중 하나를 선택하세요.</p>
-        <p class="text textGN">3. 3 선승제 입니다.</p>
-        <!-- <p class="text textGN">4.</p> -->
-        <!-- <p id="cc">정답 :</p> -->
-        <!-- <p>-+_=.*-+-=_-*+-.=_+_-*+.*_=_*-=_-</p> -->
-
-        <div>
-          <p class="List ButtonRPS">가위 바위 보!</p>
+        <div class="Button BackButton BackButtonRPS" onclick="goToBack()">
+          <
         </div>
       </div>
-
+      <p class="GameTitle RPSTitle">가바보</p>
+      <div class="HowToPlay">
+        <!-- <p>-_=_+.-=.*-_*+.*_=_*-*+-.=_+_-+_-</p> -->
+        <p class="text textRPS">1. 무엇을 낼지 생각하세요.</p>
+        <p class="text textRPS">2. 가위 바위 보 중 하나를 선택하세요.</p>
+        <p class="text textRPS">3. 3 선승제 입니다.</p>
+        <!-- <p class="text textRPS">4.</p> -->
+        <!-- <p id="cc">정답 :</p> -->
+        <!-- <p>-+_=.*-+-=_-*+-.=_+_-*+.*_=_*-=_-</p> -->
+      </div>
+      <p class="Message RPSScoreMessage">>> 0승 0패</p>
+      <div class="ChooseRPS">
+        <p class="set Button ChooseRPSButton" id="S" onclick="Choose('S') ">
+          가위
+        </p>
+        <p class="set Button ChooseRPSButton" id="R" onclick="Choose('R')">
+          바위
+        </p>
+        <p class="set Button ChooseRPSButton" id="P" onclick="Choose('P')">
+          보
+        </p>
+      </div>
+      <p class="List ButtonRPS">가위 바위 보!</p>
+    </div>
     <!-- <script src="MiniGame.js"></script> -->
     <script>
+      function Choose(click) {
+        let choice = document.getElementById(click);
+        choice.classList.add("whenClickButton");
+        if (click == "S") {
+          let change1 = document.getElementById("R");
+          let change2 = document.getElementById("P");
+          change1.classList.remove("whenClickButton");
+          change2.classList.remove("whenClickButton");
+        } else if (click == "R") {
+          let change1 = document.getElementById("S");
+          let change2 = document.getElementById("P");
+          change1.classList.remove("whenClickButton");
+          change2.classList.remove("whenClickButton");
+        } else if (click == "P") {
+          let change1 = document.getElementById("S");
+          let change2 = document.getElementById("R");
+          change1.classList.remove("whenClickButton");
+          change2.classList.remove("whenClickButton");
+        }
+      }
       function eff() {
-      var colorful = document.querySelectorAll(".textGN");
+        var colorful = document.querySelectorAll(".textRPS");
         let delay = 0; // 초깃값 설정
 
         colorful.forEach((text, index) => {
