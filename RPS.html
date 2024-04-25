@@ -39,10 +39,37 @@
           보
         </p>
       </div>
-      <p class="List ButtonRPS">가위 바위 보!</p>
+      <p class="List ButtonRPS" id="RPS">가위 바위 보!</p>
     </div>
     <!-- <script src="MiniGame.js"></script> -->
     <script>
+      // 수정해야됨
+      // function what() {
+      //   let s = document.getElementById(S);
+      //   let r = ocument.getElementById(R);
+      //   let p = ocument.getElementById(P);
+
+      //   s.addEventListener("click", run("s"));
+      //   r.addEventListener("click", run("r"));
+      //   p.addEventListener("click", run("p"));
+      // }
+      // function run(num) {
+      //   let num;
+      //   const gamestart = document.getElementById(RPS);
+      //   gamestart.addEventListener("click", RPSGame(num));
+
+      //   document.querySelector(.ChooseRPSButton).onclick = what();
+      // }
+      // function RPSGame(user) {
+
+      //   if (user == "s") {
+      //     console.log("s");
+      //   } else if (user == "r") {
+      //     console.log("r");
+      //   } else if (user == "p") {
+      //     console.log("p");
+      //   }
+      // }
       function Choose(click) {
         let choice = document.getElementById(click);
         choice.classList.add("whenClickButton");
@@ -51,18 +78,25 @@
           let change2 = document.getElementById("P");
           change1.classList.remove("whenClickButton");
           change2.classList.remove("whenClickButton");
+
+          return choice;
         } else if (click == "R") {
           let change1 = document.getElementById("S");
           let change2 = document.getElementById("P");
           change1.classList.remove("whenClickButton");
           change2.classList.remove("whenClickButton");
+
+          return choice;
         } else if (click == "P") {
           let change1 = document.getElementById("S");
           let change2 = document.getElementById("R");
           change1.classList.remove("whenClickButton");
           change2.classList.remove("whenClickButton");
+
+          return choice;
         }
       }
+      console.log(user);
       function eff() {
         var colorful = document.querySelectorAll(".textRPS");
         let delay = 0; // 초깃값 설정
